@@ -1,9 +1,9 @@
 <template>
-  <div class="background">
+  <div class="error">
     <div class="center">
-      <h1>PageNotFound</h1>
+      <h1 class="error-title">{{error}}</h1>
       <h3>{{warning}}</h3>
-      <router-link to="/"><button class="warning">GO BACK!</button></router-link>
+      <router-link to="/"><button class="btn btn-danger">GO BACK!</button></router-link>
     </div>
   </div>
   
@@ -14,16 +14,26 @@ export default {
   name: "PageNotFound",
   data() {
     return {
+      error: 404,
       warning: "You won't find tournaments or matches here!"
     }
   }
 };
 </script>
 
-<style scoped>
-.background {
+<style>
+.error {
   position: relative;
-  background: url("../assets/back.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background: rgba(9, 10, 66, 1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.error .error-title {
+  font-size: 7rem;
 }
 </style>
